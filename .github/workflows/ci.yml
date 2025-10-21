@@ -42,7 +42,6 @@ jobs:
           echo "PR_BRANCH=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
           echo "PR_COMMIT=${{ github.event.pull_request.head.sha }}" >> $GITHUB_ENV
 
-
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v4

@@ -3,7 +3,7 @@
 all:  image push
 
 APP=$(shell basename $(shell git remote get-url origin))
-REGESTRY=denvasyliev
+REGESTRY=vkhash
 CURRENTARCH=$(shell dpkg --print-architecture)
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse HEAD|cut -c1-7)
 HELM_VERSION=$(shell git describe --tags --abbrev=0)
@@ -21,7 +21,7 @@ test: lint
 	go test -v
 
 build: format
-	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=$(shell dpkg --print-architecture) go build -v -o kbot -ldflags "-X="github.com/den-vasyliev/kbot/cmd.appVersion=${VERSION}
+	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=$(shell dpkg --print-architecture) go build -v -o kbot -ldflags "-X="github.com/vkhash/kbot/cmd.appVersion=${VERSION}
 
 image:
 	docker build . -t ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH} --no-cache --build-arg TARGETOS=${TARGETOS} --build-arg TARGETARCH=${TARGETARCH}
