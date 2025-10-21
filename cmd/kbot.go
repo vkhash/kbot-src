@@ -1,16 +1,14 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
-	"github.com/stianeikeland/go-rpio"
-	telebot "gopkg.in/telebot.v3"
 	"log"
 	"os"
 	"time"
+
+	"github.com/spf13/cobra"
+	"github.com/stianeikeland/go-rpio"
+	telebot "gopkg.in/telebot.v3"
 )
 
 var (
