@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:experimental
-FROM golang:1.19 as builder
+FROM golang:1.19 AS builder
 ARG TARGETOS
 ARG TARGETARCH
 ARG APP_BUILD_INFO
